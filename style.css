@@ -1,71 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: "Poppins", sans-serif;
 }
+
+
 
 
 .logo-mario {
-    height: 200px;
+    width: 200px;
 }
 
 button {
-    color: white;
-    background-color: #c51111;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    height: 50px;
     width: 200px;
+    height: 50px;
     font-weight: bold;
-    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(216, 11, 11);
+    color: white;
+    cursor: pointer;
     margin-top: 30px;
+
 }
 
-button:hover {
-    background-color: rgb(121, 1, 1);
-    transition: .5s;
+.caixa-principal button:hover {
+    background-color: rgb(250, 250, 250);
+    color: rgb(216, 11, 11);
+    transition: 0.5s ease-in-out;
+    font-size: 14px;
 }
 
-.img-mario-luigi {
-    height: 500px;
+
+.img-luigi-mario {
+    width: 500px;
 }
 
 body {
     height: 100vh;
-
 }
 
 .caixa-mae {
     display: flex;
-    height: 100vh;
-    padding: 100px;
     align-items: center;
     justify-content: space-around;
+    padding: 100px;
+    height: 100vh;
 }
 
-.caixa-principal {
+.caixa-principl {
     width: 40%;
-
 }
 
 .caixa-video {
     position: fixed;
-    top: 0;
     z-index: -1;
+    top: 0;
 }
 
 video {
-    width: 100vw;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+
 }
 
 .mascara {
-    height: 100%;
     width: 100%;
+    height: 100%;
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
     position: fixed;
     top: 0;
+
 }
 
 p {
@@ -73,18 +83,18 @@ p {
     font-size: 15px;
 }
 
-.link-wpp img {
+.img-wpp {
     height: 60px;
     position: fixed;
     right: 20px;
     bottom: 20px;
-
 }
 
 .header {
+    font-weight: bold;
     display: flex;
-    gap: 30px;
     align-items: center;
+    gap: 30px;
     margin: 30px;
 
 }
@@ -95,12 +105,95 @@ p {
 
 .header a {
     color: white;
-    font-size: 25px;
+    font-size: 18px;
     cursor: pointer;
 }
 
 .header a:hover {
-    color: #c51111;
-    font-size: 26px;
-    transition: .5s;
+    color: rgb(216, 11, 11);
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+
+}
+
+.formulario {
+    background-color: white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: fixed;
+    top: 30%;
+    left: -300px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 1s;
+
+
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    outline-color: rgb(216, 11, 11);
+}
+
+textarea {
+    width: 270px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    outline-color: rgb(216, 11, 11);
+
+}
+
+.mascara-formulario {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    transition: visibility 1s;
+}
+
+@media(max-width:1100px){
+
+    p {
+        display: none;
+    }
+
+    .caixa-mae {
+        flex-direction: column;
+        padding: 10px;
+        justify-content: flex-start;
+    }
+
+    .caixa-principal {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .img-luigi-mario{
+        width: 80vw;
+        height: auto;
+    }
+
+    .header {
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header img {
+        display: none;
+    }
+
+    .header a {
+        font-size: 10px;
+    }
 }
